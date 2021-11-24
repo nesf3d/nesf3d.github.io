@@ -186,31 +186,19 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            We present NeSF, a method for producing 3D semantic fields from posed RGB images alone.
+            In place of classical 3D representations, our method builds on recent work in implicit 
+            neural scene representations wherein 3D structure is captured by point-wise functions. 
+            We leverage this methodology to recover 3D density fields upon which we then train a 3D 
+            semantic segmentation model supervised by posed 2D semantic maps. Despite being trained
+            on 2D signals alone, our method is able to generate 3D-consistent semantic maps from
+            novel camera poses and can be queried at arbitrary 3D points. Notably, NeSF is compatible
+            with any method producing a density field, and its accuracy improves as the quality of the
+            density field improves. Our empirical analysis demonstrates comparable quality to 
+            competitive 2D and 3D semantic segmentation baselines on complex, realistically-rendered 
+            synthetic scenes. Our method is the first to offer truly dense 3D scene segmentations 
+            requiring only 2D supervision for training, and does not require any semantic input for
+            inference on novel scenes.
           </p>
         </div>
       </div>
